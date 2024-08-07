@@ -12,6 +12,7 @@ describe "線形探索のテスト" do
     end
   end
 
+  
   context "指定したものが存在しない場合" do
     let(:target) { 6 }
 
