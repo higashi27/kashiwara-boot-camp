@@ -17,7 +17,6 @@ def binary_search(array, target)
       return binary_search(array[min..max], target)
     elsif array[mid] > target
       max = mid - 1
-      p array[min..max]
       return binary_search(array[min..max], target)
     elsif array[mid] == target
       return "#{target}が見つかりました"
