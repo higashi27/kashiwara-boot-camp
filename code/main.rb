@@ -1,16 +1,19 @@
 # バブルソート
-array = [1, 2, 3, 4, 5]
-
 def bubble_sort(array)
-  array.each_with_index do |n, i|
-    p i
-    if array[i-1] > array[i]
-      array[i], array[i-1] = array[i-1], array[i]
-      p array
-    elsif array[i-1] <= array[i]
-      next
+  max1 = array.length
+  max2 = array.length - 1
+  for i in 1..max1 do
+    for j in 1..max2 do
+      if array[j-1] > array[j]
+        array[j-1], array[j] = array[j], array[j-1]
+      elsif array[j-1] <= array[j]
+        next
+      end
     end
+    max2 -= 1
   end
+  array
 end
 
-puts bubble_sort(array)
+array = [5, 3, 4, 1, 2]
+p bubble_sort(array)
