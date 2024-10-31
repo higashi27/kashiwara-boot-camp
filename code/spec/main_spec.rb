@@ -14,7 +14,7 @@ describe 'バブルソートのテスト' do
     let(:array) { [5, 3, 4, 1, nil] }
 
     it 'エラーが返ってくること' do
-      expect(bubble_sort(array)).to raise_error(ArgumentError, '配列にnilが含まれています')
+      expect { bubble_sort(array) }.to raise_error(ArgumentError, '配列にnilが含まれています')
     end
   end
 
