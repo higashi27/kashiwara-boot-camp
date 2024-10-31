@@ -1,5 +1,7 @@
 # バブルソート
 def bubble_sort(array)
+  raise ArgumentError, '配列にnilが含まれています' if array.include?(nil)
+
   max1 = array.length
   max2 = array.length - 1
   for i in 1..max1 do
@@ -15,5 +17,5 @@ def bubble_sort(array)
   array
 end
 
-array = [5, 3, 4, 1, 2]
+array = [1,5,3,1,2]
 p bubble_sort(array)
