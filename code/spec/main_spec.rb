@@ -10,15 +10,19 @@ describe 'バブルソートのテスト' do
     end
   end
 
-  context '異常系' do
-    it '配列にnilが含まれるときエラーが返ってくること' do
-      let(:array) { [5, 3, 4, 1, nil] }
-      # ?
-    end
+  context '配列にnilが含まれるとき' do
+    let(:array) { [5, 3, 4, 1, nil] }
 
-    it '配列が空のときエラーが返ってくること' do
-      let(:array) { [] }
-      # ?
+    it 'エラーが返ってくること' do
+      expect(bubble_sort(array)).to raise_error(ArgumentError, '配列にnilが含まれています')
+    end
+  end
+
+  context '配列が空のとき' do
+    let(:array) { [] }
+
+    it 'エラーが返ってくること' do
+      expect(bubble_sort(array)).to eq []
     end
   end
 end
